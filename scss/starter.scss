@@ -28,11 +28,9 @@
 $enable-gradients: true;
 $enable-shadows: true;
 
-// Customize some defaults
-// $body-color: #333;
-$body-bg: #fff;
-$primary: #5265E1;
-$secondary: #FA5959;
+// override default variables
+@import "custom-variables";
+@import "styles";
 
 @import "bootstrap/scss/functions"; // Required
 @import "bootstrap/scss/variables"; // Required
