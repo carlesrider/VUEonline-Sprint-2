@@ -4,12 +4,10 @@ section {
     @include media-breakpoint-up(md) {
         padding-top: 6rem;
         padding-bottom: 6rem;
-    }
-    
-
-    h3 {
-        font-size: 2.4rem;
-    }
+        h3 {
+            font-size: 2.4rem;
+        }
+    }    
 }
 
 .btn {
@@ -19,6 +17,9 @@ section {
 #site-header {
     .navbar-toggler {
         border: none;
+        &:focus {
+            box-shadow: none;
+        }
     }
     .nav-link,
     .btn {
@@ -37,33 +38,71 @@ section {
     &.text-bg-dark {
         background-color: rgba($blue-900,0.8) !important;
     }
-    .offcanvas-header .btn-close {
-        background: transparent url("../images/icon-close.svg") center/1em auto no-repeat;
+    .offcanvas-header {
+        padding: 2rem 1.5rem 2rem 0.8rem;
+        .btn-close {
+            background: transparent url("../images/icon-close.svg") center/1em auto no-repeat;
+            opacity: 1;
+        }
     }
-    img {
-        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
-    }
-    .navbar-nav {
-        border-top: 1px solid $gray-500;
-    }
-    .nav-link,
-    .btn {
-        text-transform: uppercase;
-        font-weight: 500;
-        width: 100%;
-        text-align: center;
-        border-bottom: 1px solid $gray-500;
-        font-size: 1.125rem;
-    }
-    .btn {
-        color: $white;
-        margin-top: 2rem;
-        border: 3px solid $white;
-    }
+    .offcanvas-body {
     
+        .navbar-nav {
+            border-top: 1px solid $gray-500;
+            .nav-link {
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+            }
+            .nav-link,
+            .btn {
+                text-transform: uppercase;
+                font-weight: 500;
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid $gray-500;
+                font-size: 1.125rem;
+            }
+            .btn {
+                color: $white;
+                margin-top: 2rem;
+                border: 3px solid $white;
+            }
+        }  
+    }  
+}
+
+.primary-shadow__right,
+.primary-shadow__left {
+    position: relative;
+    &:after {
+        content: "";
+        position: absolute;
+        background-color: $primary;
+        top: 4rem;
+        bottom: 2rem;
+        z-index: -1;
+    }
+}
+.primary-shadow__right {
+    &:after {
+        border-top-left-radius: 20rem;
+        border-bottom-left-radius: 20rem;
+        left: 8rem;
+        right: -100%;
+    }
+}
+.primary-shadow__left {
+    &:after {
+        border-top-right-radius: 20rem;
+        border-bottom-right-radius: 20rem;
+        right: 8rem;
+        bottom: 20;
+        left: -100%;
+    }
 }
 #introduction {
     padding-top: 8rem;
+    overflow: hidden;
     @include media-breakpoint-up(md) {
         padding-top: 12rem;
     }
@@ -85,6 +124,7 @@ section {
 }
 
 #features {
+    overflow: hidden;
     .nav-tabs {
         border-bottom: none;
         @include media-breakpoint-down(sm) {
@@ -139,12 +179,14 @@ section {
         }
     }
     #browsers {
-        .col {
-            &:nth-child(2) {
-                margin-top: 3rem;
-            }
-            &:nth-child(3) {
-                margin-top: 6rem;
+        @include media-breakpoint-up(md) {   
+            .col-10 {
+                &:nth-child(2) {
+                    margin-top: 5rem;
+                }
+                &:nth-child(3) {
+                    margin-top: 8rem;
+                }
             }
         }
     }
