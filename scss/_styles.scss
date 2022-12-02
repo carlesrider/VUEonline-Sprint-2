@@ -1,4 +1,97 @@
 section {
-    padding-top: 10rem;
-    // padding-bottom: 10rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    h3 {
+        font-size: 2.4rem;
+    }
+}
+
+.btn {
+    font-weight: 500;    
+}
+
+#site-header {
+    .nav-link,
+    .btn {
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+    .btn {
+        color: #fff;
+        margin-left: 1.5rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+}
+
+#introduction {
+    padding-top: 12rem;
+    h1 {
+        font-size: 3.4rem;
+    }
+    .btn-primary {
+        margin-right: 1rem;
+    }
+}
+
+#features {
+    .nav-tabs {
+        border-bottom: none;
+        .nav-item {
+            border-bottom: 1px solid #cdcdcd;
+            .nav-link {
+                padding: 1.5rem 3rem;
+                color: #777;
+                border: none;
+                font-size: 1.125rem;
+                &:hover {
+                    color: #333;
+                }
+                &.active {
+                    color: #333;
+                    font-weight: 600;
+                    border: none;
+                    border-bottom: 3px solid $secondary;
+                }
+            }
+        }
+    }
+    .tab-content {
+        padding-top: 4rem;
+        
+    }
+}
+
+#download {
+    .card {
+        border: none;
+        .card-footer {
+            background-color: #fff;
+        }
+        &.shadow:hover {
+            @extend .shadow-lg;
+        }
+        .card-footer {
+            border-top: none;
+            background-image: url('../images/bg-dots.svg');
+            background-repeat: no-repeat;
+            background-position: center top;
+        }
+    }
+    #browsers {
+        .col {
+            &:nth-child(2) {
+                margin-top: 3rem;
+            }
+            &:nth-child(3) {
+                margin-top: 6rem;
+            }
+        }
+    }
+}
+#faqs {
+    .accordion {
+        border-top: 1px solid rgb(222, 226, 230);
+        border-bottom: 1px solid rgb(222, 226, 230);
+    }
 }
