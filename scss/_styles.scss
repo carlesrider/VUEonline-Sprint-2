@@ -11,7 +11,10 @@ section {
 }
 
 .btn {
-    font-weight: 500;    
+    font-weight: 500; 
+    &.btn-secondary {
+        color: $white;
+    }
 }
 
 #site-header {
@@ -191,9 +194,62 @@ section {
         }
     }
 }
+
 #faqs {
     .accordion {
         border-top: 1px solid rgb(222, 226, 230);
         border-bottom: 1px solid rgb(222, 226, 230);
+    }
+}
+
+#newsletter {
+    .pretitle {
+        letter-spacing: 4px;
+        font-weight: 500;
+    }
+    .form-control {
+        padding-top: 0.8rem;
+        padding-bottom: 0.8rem;
+        position: relative;
+    }
+    .was-validated .form-control:invalid, .form-control.is-invalid {
+        border: 2px solid $secondary;
+        z-index: 1;
+    }
+    .invalid-feedback {
+        background-color: $secondary;
+        color: $white;
+        text-align: left;
+        font-style: italic;
+        margin-top: 0;
+        border-bottom-left-radius: .375rem;
+        border-bottom-right-radius: .375rem;
+        position: relative;
+        top: -5px;
+        z-index: 0;
+        padding: calc(0.5rem + 5px) 1rem 0.5rem;
+    }
+}
+
+#site-footer {
+    background-color: $blue-900;
+    .nav-link {
+        text-transform: uppercase;
+        color: $white;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        
+    }
+    @include media-breakpoint-down(md)  {
+        .navbar-brand {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .social-links {
+            margin-top: 1rem;
+            justify-content: center !important;
+            width: 100% !important;
+        }
     }
 }
