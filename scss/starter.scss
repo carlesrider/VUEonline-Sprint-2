@@ -19,6 +19,8 @@
 // Import all of Bootstrap's CSS
 // override default variables
 @import "custom-variables";
-@import "styles";
+
 
 @import "bootstrap/scss/bootstrap";
+
+@import "styles";

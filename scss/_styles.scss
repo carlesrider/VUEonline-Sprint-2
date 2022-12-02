@@ -1,6 +1,12 @@
 section {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    @include media-breakpoint-up(md) {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+    
+
     h3 {
         font-size: 2.4rem;
     }
@@ -11,35 +17,89 @@ section {
 }
 
 #site-header {
+    .navbar-toggler {
+        border: none;
+    }
     .nav-link,
     .btn {
         text-transform: uppercase;
         font-weight: 500;
     }
     .btn {
-        color: #fff;
+        color: $white;
         margin-left: 1.5rem;
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
     }
 }
 
+.offcanvas {
+    &.text-bg-dark {
+        background-color: rgba($blue-900,0.8) !important;
+    }
+    .offcanvas-header .btn-close {
+        background: transparent url("../images/icon-close.svg") center/1em auto no-repeat;
+    }
+    img {
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+    }
+    .navbar-nav {
+        border-top: 1px solid $gray-500;
+    }
+    .nav-link,
+    .btn {
+        text-transform: uppercase;
+        font-weight: 500;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid $gray-500;
+        font-size: 1.125rem;
+    }
+    .btn {
+        color: $white;
+        margin-top: 2rem;
+        border: 3px solid $white;
+    }
+    
+}
 #introduction {
-    padding-top: 12rem;
-    h1 {
-        font-size: 3.4rem;
+    padding-top: 8rem;
+    @include media-breakpoint-up(md) {
+        padding-top: 12rem;
+    }
+    @include media-breakpoint-up(md) {
+        h1 {
+            font-size: 3.4rem;
+        }
+        .text-center {
+            text-align: left !important;
+        }
+        .btn-primary {
+            margin-right: 1rem;
+        }
     }
     .btn-primary {
-        margin-right: 1rem;
+        margin-right: 0.5rem;
     }
+    
 }
 
 #features {
     .nav-tabs {
         border-bottom: none;
+        @include media-breakpoint-down(sm) {
+            border-top: 1px solid #cdcdcd;
+        }
         .nav-item {
             border-bottom: 1px solid #cdcdcd;
+            @include media-breakpoint-down(sm) {
+                width: 100%;
+            }
+            @include media-breakpoint-up(md) {
+                width: auto;
+            }
             .nav-link {
+                width: 100%;
                 padding: 1.5rem 3rem;
                 color: #777;
                 border: none;
